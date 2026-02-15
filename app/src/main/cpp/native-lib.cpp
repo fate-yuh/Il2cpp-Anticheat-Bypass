@@ -34,7 +34,11 @@ bool new_FileExists(void* self, void* stringV) {
     LOGI("Bypass File.Exists");
     return false;
 }
-
+bool (*KSHRAnti)(void *, void *) = nullptr;
+bool new_KSHRAnti(void* self, void* stringV) {
+    LOGI("Bypass KSHRAnti");
+    return false;
+}
 bool (*DirectoryExists)(void *, void *) = nullptr;
 bool new_DirectoryExists(void* self, void* path) {
     LOGI("Bypass Directory.Exists");
