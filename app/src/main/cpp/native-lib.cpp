@@ -36,6 +36,11 @@ bool new_DirectoryExists(void* self, void* path) {
     LOGI("Bypass Directory.Exists");
     return false;
 }
+bool (*application.quit)(void *, void *) = nullptr;
+bool new_application.quit(void* self, void* path) {
+    LOGI("Bypass application.quit");
+    return false;
+}
 
 bool (*isEditor)(void *) = nullptr;
 bool new_isEditor(void* self) {
