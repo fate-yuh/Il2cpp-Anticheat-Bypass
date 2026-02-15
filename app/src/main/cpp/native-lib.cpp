@@ -16,6 +16,10 @@ void (*Quit2)(void *, int *) = nullptr;
 void new_Quit2(void* self, int* exitCode) {
     LOGI("Bypass Quit 2");
 }
+void (*KSHRAnti)(void *, int *) = nullptr;
+void new_KSHRAnti(void* self, int* exitCode) {
+    LOGI("Bypass KSHRAnti");
+}
 void (*Destroy1)(void *, void* object, float* t) = nullptr;
 void new_Destroy1(void* self, void* object, float* t) {
     LOGI("Bypass Destroy 1");
