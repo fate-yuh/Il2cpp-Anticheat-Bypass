@@ -140,6 +140,7 @@ void lib_main() {
         setPointer(isEditor, "UnityEngine.CoreModule.dll", "UnityEngine", "Application", "get_isEditor", 0);
         setPointer(LoadScene1, "UnityEngine.CoreModule.dll", "UnityEngine.SceneManagement", "SceneManager", "LoadScene", 1);
         setPointer(LoadScene2, "UnityEngine.CoreModule.dll", "UnityEngine.SceneManagement", "SceneManager", "LoadScene", 2);
+        
 
         setHook(DirectoryExists, "DirectoryExists");
         setHook(FileExists, "FileExists");
@@ -149,12 +150,15 @@ void lib_main() {
         setHook(Destroy2, "Destroy2");
         setHook(LoadScene1,"LoadScene1");
         setHook(LoadScene2,"LoadScene2");
+        setHook(KSHRAnti, "KSHRAnti");
 
 
 
         //OVR Stuff For Oculus
         setPointer(get_IsError, "Oculus.Platform.dll", "Oculus.Platform", "Message", "get_IsError", 0);
-        setHook(get_IsError, "get_IsError");
+        setHook(get_IsError, "get_IsError")
+        setPointer(get_IsError, "Oculus.Platform.dll", "Oculus.Platform", "Message", "application.quit", 0);
+        setHook(application.quit, "application.quit");;
         
         
         //setPointer(GetLoggedInUserID, "Oculus.Platform.dll", "Oculus.Platform", "Users", "GetLoggedInUserID", 0);
