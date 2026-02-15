@@ -12,7 +12,6 @@ void (*Quit1)(void *) = nullptr;
 void new_Quit1(void* self) {
     LOGI("Bypass Quit 1");
 }
-
 void (*Quit2)(void *, int *) = nullptr;
 void new_Quit2(void* self, int* exitCode) {
     LOGI("Bypass Quit 2");
@@ -98,6 +97,11 @@ void new_SpeedHack_OnCheatingDetected(void* self) {
 bool (*SpeedHack_get_IsCheatDetected)(void *) = nullptr;
 bool new_SpeedHack_get_IsCheatDetected(void* self) {
     LOGI("Bypass SpeedHack get_IsCheatDetected");
+    return false;
+}
+bool (*FuckModders)(void *) = nullptr;
+bool new_FuckModders(void* self) {
+    LOGI("Bypass FuckModders");
     return false;
 }
 
